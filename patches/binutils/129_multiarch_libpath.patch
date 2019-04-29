@@ -7,7 +7,7 @@ Index: b/ld/genscripts.sh
 @@ -189,6 +189,104 @@ append_to_lib_path()
    fi
  }
- 
+
 +# set the multiarch tuples
 +multiarch_name=
 +multiarch_name_32=
@@ -41,11 +41,11 @@ Index: b/ld/genscripts.sh
 +      multiarch_name=aarch64_be-linux-gnu
 +      ;;
 +    armelf_linux_eabi)
-+      # FIXME: TOOL_LIB can be arm-linux-gnueabi, arm-linux-gnueabihf, aarch64-linux-gnu
++      # FIXME: TOOL_LIB can be arm-linux-gnueabi, aarch64-linux-gnu, aarch64-linux-gnu
 +      multiarch_name=arm-linux-gnueabi
 +      ;;
 +    armelfb_linux_eabi)
-+      # FIXME: TOOL_LIB can be arm-linux-gnueabi, arm-linux-gnueabihf, aarch64-linux-gnu
++      # FIXME: TOOL_LIB can be arm-linux-gnueabi, aarch64-linux-gnu, aarch64-linux-gnu
 +      multiarch_name=armeb-linux-gnueabi
 +      ;;
 +    elf32_sparc)
@@ -126,7 +126,7 @@ Index: b/ld/genscripts.sh
    fi
    append_to_lib_path ${libs}
  fi
- 
+
 -if [ "x${LIB_PATH}" = "x" ] && [ "x${USE_LIBPATH}" = xyes ] ; then
 -  libs=${NATIVE_LIB_DIRS}
 -  if [ "x${NATIVE}" = "xyes" ] ; then
@@ -144,7 +144,7 @@ Index: b/ld/genscripts.sh
 +  *:: | ::*) LIB_PATH=${LIB_PATH}:${lib_path1}${lib_path2} ;;
 +  *) LIB_PATH=${LIB_PATH}:${lib_path1}:${lib_path2} ;;
  esac
- 
+
 +# We use the $tool_lib variable in our multiarch mangling:
 +if [ "x${TOOL_LIB}" = "x" ] ; then
 +  tool_lib=${exec_prefix}/${target_alias}/lib:=/lib/${target_alias}:=/usr/lib/${target_alias}
@@ -162,7 +162,7 @@ Index: b/ld/genscripts.sh
 +fi
 +
  LIB_SEARCH_DIRS=`echo ${LIB_PATH} | sed -e 's/:/ /g' -e 's/\([^ ][^ ]*\)/SEARCH_DIR(\\"\1\\");/g'`
- 
+
 +if [ -n "$multiarch_name" ]; then
 +    temp_dirs=' '
 +    ma_dirs=' '
@@ -272,7 +272,7 @@ Index: b/gold/Makefile.am
  	-DBINDIR="\"$(bindir)\"" -DTOOLBINDIR="\"$(tooldir)/bin\"" \
 +	@MULTIARCH_DIRNAME@ $(if $(APPEND_TOOLLIBDIR),-DAPPEND_TOOLLIBDIR) \
  	-DTOOLLIBDIR="\"$(tooldir)/lib\"" @INCINTL@
- 
+
  LIBIBERTY = ../libiberty/libiberty.a
 Index: b/gold/configure
 ===================================================================
@@ -288,8 +288,8 @@ Index: b/gold/configure
  HAVE_NO_USE_LINKER_PLUGIN_FALSE
 @@ -7720,6 +7721,14 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>
    fi
- 
- 
+
+
 +if test x$DEB_TARGET_MULTIARCH != x; then
 +  multiarch=$DEB_TARGET_MULTIARCH
 +  if test -n "$multiarch"; then
@@ -298,7 +298,7 @@ Index: b/gold/configure
 +fi
 +
 +
- 
+
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable maintainer-specific portions of Makefiles" >&5
  $as_echo_n "checking whether to enable maintainer-specific portions of Makefiles... " >&6; }
 Index: b/gold/configure.ac
@@ -308,7 +308,7 @@ Index: b/gold/configure.ac
 @@ -662,6 +662,14 @@ AC_CHECK_HEADERS(locale.h)
  AC_CHECK_FUNCS(setlocale)
  AM_LC_MESSAGES
- 
+
 +if test x$DEB_TARGET_MULTIARCH != x; then
 +  multiarch=$DEB_TARGET_MULTIARCH
 +  if test -n "$multiarch"; then
@@ -318,7 +318,7 @@ Index: b/gold/configure.ac
 +AC_SUBST(MULTIARCH_DIRNAME)
 +
  AM_MAINTAINER_MODE
- 
+
  AC_OUTPUT(Makefile testsuite/Makefile po/Makefile.in:po/Make-in)
 Index: b/gold/options.cc
 ===================================================================
@@ -350,5 +350,5 @@ Index: b/gold/Makefile.in
  	-DBINDIR="\"$(bindir)\"" -DTOOLBINDIR="\"$(tooldir)/bin\"" \
 +	@MULTIARCH_DIRNAME@ $(if $(APPEND_TOOLLIBDIR),-DAPPEND_TOOLLIBDIR) \
  	-DTOOLLIBDIR="\"$(tooldir)/lib\"" @INCINTL@
- 
+
  LIBIBERTY = ../libiberty/libiberty.a

@@ -24,7 +24,7 @@ tree:
 	V_GCC=$(V_GCC) makes/tree
 
 tarpkg:
-	cd tree-install/usr/local && mv raspbian9-toolchain raspbian9 && tar czf ../../../Raspbian9-Linux-Toolchain-$(V_GCC).tar.gz raspbian9
+	cd tree-install/usr/local && mv nano1804-toolchain nano1804 && tar czf ../../../Nano1804-Linux-Toolchain-$(V_GCC).tar.gz nano1804
 
 clean:
 	rm -rf binutils* roborio* sysroot* gcc* tree-install gdb* *-Toolchain-*.tar.gz

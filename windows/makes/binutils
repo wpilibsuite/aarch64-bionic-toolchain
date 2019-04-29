@@ -11,16 +11,16 @@ mkdir binutils-install
 cd binutils-build
 ../binutils-${V_BINUTILS}/configure \
     --host=i686-w64-mingw32 \
-    --prefix=/c/Users/Public/raspbian9 \
-    --program-prefix=arm-raspbian9-linux-gnueabihf- \
-    --target=arm-linux-gnueabihf \
-    "--with-pkgversion=GNU Binutils for Raspbian 9" \
+    --prefix=/c/Users/Public/nano1804 \
+    --program-prefix=arm-nano1804-linux-gnueabihf- \
+    --target=aarch64-linux-gnu \
+    "--with-pkgversion=GNU Binutils for Jetson Nano 18.04" \
     --enable-poison-system-directories \
-    --with-sysroot=/c/Users/Public/raspbian9/sys-root \
+    --with-sysroot=/c/Users/Public/nano1804/sys-root \
     --enable-plugins \
     --disable-nls \
     --enable-lto \
-    --with-build-sysroot=/usr/local/raspbian9-toolchain/sys-root
+    --with-build-sysroot=/usr/local/nano1804-toolchain/sys-root
 make -j3
 DESTDIR=$PWD/../binutils-install make install
 cd ../binutils-install

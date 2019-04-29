@@ -44,16 +44,16 @@ rm -rf repack/out/etc
 # remove all empty dirs (semi-recursive)
 rm -d repack/out/*(/^F)
 
-# move "6" to "6.3.0" directories
-#rm repack/out/usr/lib/gcc/arm-linux-gnueabihf/6.3.0
-mv repack/out/usr/lib/gcc/arm-linux-gnueabihf/6 repack/out/usr/lib/gcc/arm-linux-gnueabihf/6.3.0
-rm repack/out/usr/include/arm-linux-gnueabihf/c++/6.3.0
-mv repack/out/usr/include/arm-linux-gnueabihf/c++/6 repack/out/usr/include/arm-linux-gnueabihf/c++/6.3.0
-rm repack/out/usr/include/c++/6.3.0
-mv repack/out/usr/include/c++/6 repack/out/usr/include/c++/6.3.0
+# move "6" to "7.4.0" directories
+#rm repack/out/usr/lib/gcc/aarch64-linux-gnu/7.4.0
+mv repack/out/usr/lib/gcc/aarch64-linux-gnu/6 repack/out/usr/lib/gcc/aarch64-linux-gnu/7.4.0
+rm repack/out/usr/include/aarch64-linux-gnu/c++/7.4.0
+mv repack/out/usr/include/aarch64-linux-gnu/c++/6 repack/out/usr/include/aarch64-linux-gnu/c++/7.4.0
+rm repack/out/usr/include/c++/7.4.0
+mv repack/out/usr/include/c++/6 repack/out/usr/include/c++/7.4.0
 
 # change absolute symlinks into relative symlinks
-pushd repack/out/usr/lib/arm-linux-gnueabihf
+pushd repack/out/usr/lib/aarch64-linux-gnu
 rm libanl.so
 rm libBrokenLocale.so
 rm libcidn.so
@@ -71,51 +71,51 @@ rm libresolv.so
 rm librt.so
 rm libthread_db.so
 rm libutil.so
-ln -s ../../../lib/arm-linux-gnueabihf/libanl.so.1 libanl.so
-ln -s ../../../lib/arm-linux-gnueabihf/libBrokenLocale.so.1 libBrokenLocale.so
-ln -s ../../../lib/arm-linux-gnueabihf/libcidn.so.1 libcidn.so
-ln -s ../../../lib/arm-linux-gnueabihf/libcrypt.so.1 libcrypt.so
-ln -s ../../../lib/arm-linux-gnueabihf/libdl.so.2 libdl.so
-ln -s ../../../lib/arm-linux-gnueabihf/libm.so.6 libm.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnsl.so.1 libnsl.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnss_compat.so.2 libnss_compat.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnss_dns.so.2 libnss_dns.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnss_files.so.2 libnss_files.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnss_hesiod.so.2 libnss_hesiod.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnss_nisplus.so.2 libnss_nisplus.so
-ln -s ../../../lib/arm-linux-gnueabihf/libnss_nis.so.2 libnss_nis.so
-ln -s ../../../lib/arm-linux-gnueabihf/libresolv.so.2 libresolv.so
-ln -s ../../../lib/arm-linux-gnueabihf/librt.so.1 librt.so
-ln -s ../../../lib/arm-linux-gnueabihf/libthread_db.so.1 libthread_db.so
-ln -s ../../../lib/arm-linux-gnueabihf/libutil.so.1 libutil.so
+ln -s ../../../lib/aarch64-linux-gnu/libanl.so.1 libanl.so
+ln -s ../../../lib/aarch64-linux-gnu/libBrokenLocale.so.1 libBrokenLocale.so
+ln -s ../../../lib/aarch64-linux-gnu/libcidn.so.1 libcidn.so
+ln -s ../../../lib/aarch64-linux-gnu/libcrypt.so.1 libcrypt.so
+ln -s ../../../lib/aarch64-linux-gnu/libdl.so.2 libdl.so
+ln -s ../../../lib/aarch64-linux-gnu/libm.so.6 libm.so
+ln -s ../../../lib/aarch64-linux-gnu/libnsl.so.1 libnsl.so
+ln -s ../../../lib/aarch64-linux-gnu/libnss_compat.so.2 libnss_compat.so
+ln -s ../../../lib/aarch64-linux-gnu/libnss_dns.so.2 libnss_dns.so
+ln -s ../../../lib/aarch64-linux-gnu/libnss_files.so.2 libnss_files.so
+ln -s ../../../lib/aarch64-linux-gnu/libnss_hesiod.so.2 libnss_hesiod.so
+ln -s ../../../lib/aarch64-linux-gnu/libnss_nisplus.so.2 libnss_nisplus.so
+ln -s ../../../lib/aarch64-linux-gnu/libnss_nis.so.2 libnss_nis.so
+ln -s ../../../lib/aarch64-linux-gnu/libresolv.so.2 libresolv.so
+ln -s ../../../lib/aarch64-linux-gnu/librt.so.1 librt.so
+ln -s ../../../lib/aarch64-linux-gnu/libthread_db.so.1 libthread_db.so
+ln -s ../../../lib/aarch64-linux-gnu/libutil.so.1 libutil.so
 popd
 
-pushd repack/out/usr/lib/gcc/arm-linux-gnueabihf/6.3.0
+pushd repack/out/usr/lib/gcc/aarch64-linux-gnu/7.4.0
 rm libasan.so
 rm libatomic.so
 rm libgcc_s.so.1
 rm libgomp.so
 rm libstdc++.so
 rm libubsan.so
-ln -s ../../../arm-linux-gnueabihf/libasan.so.3 libasan.so
-ln -s ../../../arm-linux-gnueabihf/libatomic.so.1 libatomic.so
-ln -s ../../../../../lib/arm-linux-gnueabihf/libgcc_s.so.1 libgcc_s.so.1
-ln -s ../../../arm-linux-gnueabihf/libgomp.so.1 libgomp.so
-ln -s ../../../arm-linux-gnueabihf/libstdc++.so.6 libstdc++.so
-ln -s ../../../arm-linux-gnueabihf/libubsan.so.0 libubsan.so
+ln -s ../../../aarch64-linux-gnu/libasan.so.4 libasan.so
+ln -s ../../../aarch64-linux-gnu/libatomic.so.1 libatomic.so
+ln -s ../../../../../lib/aarch64-linux-gnu/libgcc_s.so.1 libgcc_s.so.1
+ln -s ../../../aarch64-linux-gnu/libgomp.so.1 libgomp.so
+ln -s ../../../aarch64-linux-gnu/libstdc++.so.6 libstdc++.so
+ln -s ../../../aarch64-linux-gnu/libubsan.so.0 libubsan.so
 popd
 
-pushd repack/out/usr/lib/arm-linux-gnueabihf
+pushd repack/out/usr/lib/aarch64-linux-gnu
 if [[ `gcc -dumpmachine` == *apple* ]]
 then
-sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
+sed -i '' -e 's/\/usr\/lib\/aarch64-linux-gnu\///g' libc.so
 sed -i '' -e 's/\/lib\//..\/..\/..\/lib\//g' libc.so
-sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
+sed -i '' -e 's/\/usr\/lib\/aarch64-linux-gnu\///g' libpthread.so
 sed -i '' -e 's/\/lib\//..\/..\/..\/lib\//g' libpthread.so
 else
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
+sed -i 's/\/usr\/lib\/aarch64-linux-gnu\///g' libc.so
 sed -i 's/\/lib\//..\/..\/..\/lib\//g' libc.so
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
+sed -i 's/\/usr\/lib\/aarch64-linux-gnu\///g' libpthread.so
 sed -i 's/\/lib\//..\/..\/..\/lib\//g' libpthread.so
 fi
 popd

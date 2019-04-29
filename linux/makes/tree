@@ -9,9 +9,9 @@ rsync gdb-install/ tree-install -a --copy-links
 du -hs .
 
 pushd tree-install
-strip usr/local/raspbian9-toolchain/bin/*
-strip usr/local/raspbian9-toolchain/arm-*/bin/*
-find usr/local/raspbian9-toolchain/libexec -type f |xargs strip
+strip usr/local/nano1804-toolchain/bin/*
+strip usr/local/nano1804-toolchain/arm-*/bin/*
+find usr/local/nano1804-toolchain/libexec -type f |xargs strip
 popd
 
 du -hs .
