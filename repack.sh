@@ -46,11 +46,11 @@ rm -d repack/out/*(/^F)
 
 # move "6" to "7.4.0" directories
 #rm repack/out/usr/lib/gcc/aarch64-linux-gnu/7.4.0
-mv repack/out/usr/lib/gcc/aarch64-linux-gnu/6 repack/out/usr/lib/gcc/aarch64-linux-gnu/7.4.0
+mv repack/out/usr/lib/gcc/aarch64-linux-gnu/7 repack/out/usr/lib/gcc/aarch64-linux-gnu/7.4.0
 rm repack/out/usr/include/aarch64-linux-gnu/c++/7.4.0
-mv repack/out/usr/include/aarch64-linux-gnu/c++/6 repack/out/usr/include/aarch64-linux-gnu/c++/7.4.0
+mv repack/out/usr/include/aarch64-linux-gnu/c++/7 repack/out/usr/include/aarch64-linux-gnu/c++/7.4.0
 rm repack/out/usr/include/c++/7.4.0
-mv repack/out/usr/include/c++/6 repack/out/usr/include/c++/7.4.0
+mv repack/out/usr/include/c++/7 repack/out/usr/include/c++/7.4.0
 
 # change absolute symlinks into relative symlinks
 pushd repack/out/usr/lib/aarch64-linux-gnu

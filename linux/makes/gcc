@@ -45,11 +45,8 @@ mkdir gcc-install
 cd gcc-build
 ../gcc-${V_GCC}/configure \
     --enable-threads=posix \
-    --program-prefix=arm-nano1804-linux-gnueabihf- \
+    --program-prefix=aarch64-nano1804-linux-gnu- \
     --target=aarch64-linux-gnu \
-    --with-arch=armv6 \
-    --with-float=hard \
-    --with-fpu=vfp \
     --with-specs='%{save-temps: -fverbose-asm} %{funwind-tables|fno-unwind-tables|mabi=*|ffreestanding|nostdlib:;:-funwind-tables}' \
     --enable-languages=c,c++ \
     --with-default-libstdcxx-abi=new \

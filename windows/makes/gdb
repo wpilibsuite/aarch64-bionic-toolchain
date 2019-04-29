@@ -6,7 +6,7 @@ cd gdb-build
 ../gdb-${V_GDB}/configure \
     --host=i686-w64-mingw32 \
     --prefix=/c/Users/Public/nano1804 \
-    --program-prefix=arm-nano1804-linux-gnueabihf- \
+    --program-prefix=aarch64-nano1804-linux-gnu- \
     --target=aarch64-linux-gnu \
     --with-sysroot=/c/Users/Public/nano1804/sys-root \
     --with-build-sysroot=/usr/local/nano1804-toolchain/sys-root \

@@ -11,7 +11,7 @@ mkdir binutils-install
 cd binutils-build
 ../binutils-${V_BINUTILS}/configure \
     --prefix=/usr/local/nano1804-toolchain \
-    --program-prefix=arm-nano1804-linux-gnueabihf- \
+    --program-prefix=aarch64-nano1804-linux-gnu- \
     --target=aarch64-linux-gnu \
     "--with-pkgversion=GNU Binutils for Jetson Nano 18.04" \
     --enable-poison-system-directories \

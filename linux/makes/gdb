@@ -4,7 +4,7 @@ mkdir gdb-build
 mkdir gdb-install
 cd gdb-build
 ../gdb-${V_GDB}/configure \
-    --program-prefix=arm-nano1804-linux-gnueabihf- \
+    --program-prefix=aarch64-nano1804-linux-gnu- \
     --target=aarch64-linux-gnu \
     --prefix=/usr/local/nano1804-toolchain \
     --with-pkgversion='GDB for Jetson Nano 18.04' \
