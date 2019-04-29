@@ -10,7 +10,7 @@ du -hs .
 
 pushd tree-install
 strip usr/local/nano1804-toolchain/bin/*
-strip usr/local/nano1804-toolchain/arm-*/bin/*
+strip usr/local/nano1804-toolchain/aarch64-*/bin/*
 find usr/local/nano1804-toolchain/libexec -type f |xargs strip
 popd
 
