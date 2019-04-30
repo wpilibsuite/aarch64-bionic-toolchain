@@ -45,7 +45,7 @@ mkdir gcc-install
 cd gcc-build
 ../gcc-${V_GCC}/configure \
     --enable-threads=posix \
-    --program-prefix=aarch64-nano1804-linux-gnu- \
+    --program-prefix=aarch64-bionic-linux-gnu- \
     --target=aarch64-linux-gnu \
     --with-specs='%{save-temps: -fverbose-asm} %{funwind-tables|fno-unwind-tables|mabi=*|ffreestanding|nostdlib:;:-funwind-tables}' \
     --enable-languages=c,c++ \
@@ -54,15 +54,15 @@ cd gcc-build
     --enable-shared \
     --enable-lto \
     --disable-nls \
-    "--with-pkgversion=GCC for Jetson Nano 18.04" \
+    "--with-pkgversion=GCC for Ubuntu Bionic Cross 18.04" \
     --with-cloog \
     --enable-multilib \
     --enable-multiarch \
-    --prefix=/usr/local/nano1804-toolchain \
-    --with-sysroot=/usr/local/nano1804-toolchain/sys-root \
+    --prefix=/usr/local/bionic-toolchain \
+    --with-sysroot=/usr/local/bionic-toolchain/sys-root \
     --disable-libmudflap \
-    --libdir=/usr/local/nano1804-toolchain/sys-root/usr/lib \
-    --with-gxx-include-dir=/usr/local/nano1804-toolchain/sys-root/usr/include/c++/7.4.0 \
+    --libdir=/usr/local/bionic-toolchain/sys-root/usr/lib \
+    --with-gxx-include-dir=/usr/local/bionic-toolchain/sys-root/usr/include/c++/7.4.0 \
     --with-system-zlib \
     || exit $?
 make -j3 all-gcc || exit $?

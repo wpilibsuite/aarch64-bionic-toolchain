@@ -9,9 +9,9 @@ rsync gdb-install/ tree-install -a --copy-links
 du -hs .
 
 pushd tree-install
-strip usr/local/nano1804-toolchain/bin/*
-strip usr/local/nano1804-toolchain/aarch64-*/bin/*
-find usr/local/nano1804-toolchain/libexec -type f |xargs strip
+strip usr/local/bionic-toolchain/bin/*
+strip usr/local/bionic-toolchain/aarch64-*/bin/*
+find usr/local/bionic-toolchain/libexec -type f |xargs strip
 popd
 
 du -hs .

@@ -14,5 +14,5 @@ docker pull wpilib/toolchain-builder:18.04 \
   && make gcc \
   && sudo cp gcc-install/usr/local/* /usr/local/ -r \
   && cd ../windows \
-  && env PATH=\${PATH}:/usr/local/nano1804-toolchain/bin make sysroot binutils gcc gdb tree zip \
+  && env PATH=\${PATH}:/usr/local/bionic-toolchain/bin make sysroot binutils gcc gdb tree zip \
   && cp *.zip /artifacts/"

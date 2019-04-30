@@ -37,7 +37,7 @@ tree:
 	V_GCC=$(V_GCC) makes/tree
 
 tarpkg:
-	cd tree-install/usr/local && mv nano1804-toolchain nano1804 && tar czf ../../../Nano1804-Mac-Toolchain-$(V_GCC).tar.gz nano1804
+	cd tree-install/usr/local && mv bionic-toolchain bionic && tar czf ../../../Bionic-Mac-Toolchain-$(V_GCC).tar.gz bionic
 
 clean:
 	rm -rf binutils* roborio* sysroot* gcc* tree-install gdb* makes/pkg/build *.pkg.tar.gz *-Toolchain-*.tar.gz

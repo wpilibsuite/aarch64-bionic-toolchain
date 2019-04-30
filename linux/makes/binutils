@@ -10,12 +10,12 @@ mkdir binutils-build
 mkdir binutils-install
 cd binutils-build
 ../binutils-${V_BINUTILS}/configure \
-    --prefix=/usr/local/nano1804-toolchain \
-    --program-prefix=aarch64-nano1804-linux-gnu- \
+    --prefix=/usr/local/bionic-toolchain \
+    --program-prefix=aarch64-bionic-linux-gnu- \
     --target=aarch64-linux-gnu \
-    "--with-pkgversion=GNU Binutils for Jetson Nano 18.04" \
+    "--with-pkgversion=GNU Binutils for Ubuntu Bionic Cross 18.04" \
     --enable-poison-system-directories \
-    --with-sysroot=/usr/local/nano1804-toolchain/sys-root \
+    --with-sysroot=/usr/local/bionic-toolchain/sys-root \
     --disable-nls \
     --enable-lto \
     --disable-werror

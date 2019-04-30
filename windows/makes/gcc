@@ -40,18 +40,18 @@ mv mpfr-${V_MPFR} gcc-${V_GCC}/mpfr
 mv mpc-${V_MPC} gcc-${V_GCC}/mpc
 mv gmp-${V_GMPf} gcc-${V_GCC}/gmp
 
-export CC_FOR_TARGET=aarch64-nano1804-linux-gnu-gcc
-export CXX_FOR_TARGET=aarch64-nano1804-linux-gnu-g++
-export GCC_FOR_TARGET=aarch64-nano1804-linux-gnu-gcc
-export AR_FOR_TARGET=aarch64-nano1804-linux-gnu-ar
-export AS_FOR_TARGET=aarch64-nano1804-linux-gnu-as
-export LD_FOR_TARGET=aarch64-nano1804-linux-gnu-ld
-export NM_FOR_TARGET=aarch64-nano1804-linux-gnu-nm
-export OBJCOPY_FOR_TARGET=aarch64-nano1804-linux-gnu-objcopy
-export OBJDUMP_FOR_TARGET=aarch64-nano1804-linux-gnu-objdump
-export RANLIB_FOR_TARGET=aarch64-nano1804-linux-gnu-ranlib
-export READELF_FOR_TARGET=aarch64-nano1804-linux-gnu-readelf
-export STRIP_FOR_TARGET=aarch64-nano1804-linux-gnu-strip
+export CC_FOR_TARGET=aarch64-bionic-linux-gnu-gcc
+export CXX_FOR_TARGET=aarch64-bionic-linux-gnu-g++
+export GCC_FOR_TARGET=aarch64-bionic-linux-gnu-gcc
+export AR_FOR_TARGET=aarch64-bionic-linux-gnu-ar
+export AS_FOR_TARGET=aarch64-bionic-linux-gnu-as
+export LD_FOR_TARGET=aarch64-bionic-linux-gnu-ld
+export NM_FOR_TARGET=aarch64-bionic-linux-gnu-nm
+export OBJCOPY_FOR_TARGET=aarch64-bionic-linux-gnu-objcopy
+export OBJDUMP_FOR_TARGET=aarch64-bionic-linux-gnu-objdump
+export RANLIB_FOR_TARGET=aarch64-bionic-linux-gnu-ranlib
+export READELF_FOR_TARGET=aarch64-bionic-linux-gnu-readelf
+export STRIP_FOR_TARGET=aarch64-bionic-linux-gnu-strip
 
 mkdir gcc-build
 mkdir gcc-install
@@ -59,7 +59,7 @@ cd gcc-build
 ../gcc-${V_GCC}/configure \
     --host=i686-w64-mingw32 \
     --enable-threads=posix \
-    --program-prefix=aarch64-nano1804-linux-gnu- \
+    --program-prefix=aarch64-bionic-linux-gnu- \
     --target=aarch64-linux-gnu \
     --with-specs='%{save-temps: -fverbose-asm} %{funwind-tables|fno-unwind-tables|mabi=*|ffreestanding|nostdlib:;:-funwind-tables}' \
     --enable-languages=c,c++ \
@@ -68,16 +68,16 @@ cd gcc-build
     --enable-shared \
     --enable-lto \
     --disable-nls \
-    "--with-pkgversion=GCC for Jetson Nano 18.04" \
+    "--with-pkgversion=GCC for Ubuntu Bionic Cross 18.04" \
     --with-cloog \
     --enable-multilib \
     --enable-multiarch \
-    --prefix=/c/Users/Public/nano1804 \
-    --with-sysroot=/c/Users/Public/nano1804/sys-root \
+    --prefix=/c/Users/Public/bionic \
+    --with-sysroot=/c/Users/Public/bionic/sys-root \
     --disable-libmudflap \
-    --with-build-sysroot=/usr/local/nano1804-toolchain/sys-root \
-    --libdir=/c/Users/Public/nano1804/sys-root/usr/lib \
-    --with-gxx-include-dir=/c/Users/Public/nano1804/sys-root/usr/include/c++/7.4.0 \
+    --with-build-sysroot=/usr/local/bionic-toolchain/sys-root \
+    --libdir=/c/Users/Public/bionic/sys-root/usr/lib \
+    --with-gxx-include-dir=/c/Users/Public/bionic/sys-root/usr/include/c++/7.4.0 \
     || exit $?
 make -j3 all-gcc || exit $?
 DESTDIR=$PWD/../gcc-install make install-gcc || exit $?

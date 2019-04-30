@@ -4,18 +4,18 @@ mkdir gdb-build
 mkdir gdb-install
 cd gdb-build
 ../gdb-${V_GDB}/configure \
-    --program-prefix=aarch64-nano1804-linux-gnu- \
+    --program-prefix=aarch64-bionic-linux-gnu- \
     --target=aarch64-linux-gnu \
-    --prefix=/usr/local/nano1804-toolchain \
-    --with-pkgversion='GDB for Jetson Nano 18.04' \
+    --prefix=/usr/local/bionic-toolchain \
+    --with-pkgversion='GDB for Ubuntu Bionic Cross 18.04' \
     --disable-nls \
     --with-libexpat \
-    --with-system-gdbinit=/usr/local/nano1804-toolchain/sys-root/usr/share/gdb/gdbinit \
-    --with-sysroot=/usr/local/nano1804-toolchain/sys-root/ \
+    --with-system-gdbinit=/usr/local/bionic-toolchain/sys-root/usr/share/gdb/gdbinit \
+    --with-sysroot=/usr/local/bionic-toolchain/sys-root/ \
     --enable-lto \
     || exit $?
 make || exit $?
 DESTDIR=$PWD/../gdb-install make install|| exit $?
 cd ../gdb-install
-mkdir -p usr/local/nano1804-toolchain/sys-root/usr/share/gdb
+mkdir -p usr/local/bionic-toolchain/sys-root/usr/share/gdb
 

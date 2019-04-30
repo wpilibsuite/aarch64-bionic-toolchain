@@ -6,10 +6,10 @@ rsync gcc-install/ tree-install -a --copy-links
 rsync binutils-install/ tree-install -a --copy-links
 rsync sysroot-install/ tree-install -a --copy-links
 rsync gdb-install/ tree-install -a --copy-links
-cd tree-install/c/Users/Public/nano1804
+cd tree-install/c/Users/Public/bionic
 du -hs .
 i686-w64-mingw32-strip bin/*.exe
-i686-w64-mingw32-strip aarch64-nano*/bin/*.exe
+i686-w64-mingw32-strip aarch64-bionic*/bin/*.exe
 find libexec -name \*.exe | xargs i686-w64-mingw32-strip
 rm -rf share/info share/man
 
