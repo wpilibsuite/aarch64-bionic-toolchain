@@ -17,8 +17,8 @@ wget -nc -nv \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libatomic1_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libatomic1-dbg_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++6_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++6-8-dbg_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++-8-dev_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++6_8-dbg_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++_8-dev_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libasan5_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libasan5-dbg_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgomp1_${Va_LIBSTDCPP}_arm64.deb \
