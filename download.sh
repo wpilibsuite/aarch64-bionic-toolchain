@@ -11,8 +11,8 @@ wget -nc -nv \
     http://isl.gforge.inria.fr/isl-${V_ISL}.tar.bz2 \
     https://ftp.gnu.org/gnu/gdb/gdb-${V_GDB}.tar.gz \
     https://sourceforge.net/projects/expat/files/expat/${Vw_EXPAT}/expat-${Vw_EXPAT}.tar.bz2 \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc_${Va_LIBGCC}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc-dbg_${Va_LIBGCC}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc1_${Va_LIBGCC}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc1-dbg_${Va_LIBGCC}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc-8-dev_${Va_LIBGCC}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libatomic1_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libatomic1-dbg_${Va_LIBSTDCPP}_arm64.deb \
