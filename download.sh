@@ -11,20 +11,20 @@ wget -nc -nv \
     http://isl.gforge.inria.fr/isl-${V_ISL}.tar.bz2 \
     https://ftp.gnu.org/gnu/gdb/gdb-${V_GDB}.tar.gz \
     https://sourceforge.net/projects/expat/files/expat/${Vw_EXPAT}/expat-${Vw_EXPAT}.tar.bz2 \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libgcc1_${Va_LIBGCC}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libgcc1-dbg_${Va_LIBGCC}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libgcc-7-dev_${Va_LIBGCC}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libatomic1_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libatomic1-dbg_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libstdc++6_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libstdc++6-7-dbg_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libstdc++-7-dev_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libasan4_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libasan4-dbg_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libgomp1_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libgomp1-dbg_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libubsan0_${Va_LIBSTDCPP}_arm64.deb \
-    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-7/libubsan0-dbg_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc_${Va_LIBGCC}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc-dbg_${Va_LIBGCC}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgcc-8-dev_${Va_LIBGCC}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libatomic1_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libatomic1-dbg_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++6_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++6-8-dbg_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libstdc++-8-dev_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libasan5_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libasan5-dbg_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgomp1_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libgomp1-dbg_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libubsan1_${Va_LIBSTDCPP}_arm64.deb \
+    http://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-8/libubsan1-dbg_${Va_LIBSTDCPP}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_${Va_LIBC}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dbg_${Va_LIBC}_arm64.deb \
     http://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_${Va_LIBC}_arm64.deb \

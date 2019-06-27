@@ -62,7 +62,7 @@ cd gcc-build
     --with-sysroot=/usr/local/bionic-toolchain/sys-root \
     --disable-libmudflap \
     --libdir=/usr/local/bionic-toolchain/sys-root/usr/lib \
-    --with-gxx-include-dir=/usr/local/bionic-toolchain/sys-root/usr/include/c++/7.4.0 \
+    --with-gxx-include-dir=/usr/local/bionic-toolchain/sys-root/usr/include/c++/8.3.0 \
     --with-system-zlib \
     || exit $?
 make -j3 all-gcc || exit $?
