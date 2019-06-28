@@ -13,6 +13,9 @@ i686-w64-mingw32-strip aarch64-bionic*/bin/*.exe
 find libexec -name \*.exe | xargs i686-w64-mingw32-strip
 rm -rf share/info share/man
 
+# Remove non prefixed gcc
+rm bin/aarch64-linux-gnu-gcc*
+
 pushd sys-root/usr/include
 patch -p4 < ../../../../../../../../makes/case-sensitive-includes.diff
 popd

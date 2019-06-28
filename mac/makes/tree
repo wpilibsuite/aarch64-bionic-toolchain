@@ -12,6 +12,8 @@ pushd tree-install
 strip usr/local/bionic-toolchain/bin/*
 strip usr/local/bionic-toolchain/aarch64-*/bin/*
 find usr/local/bionic-toolchain/libexec -type f |xargs strip
+# Remove non prefixed gcc
+rm usr/local/bionic-toolchain/bin/aarch64-linux-gnu-gcc*
 popd
 
 du -hs .
