@@ -1,5 +1,5 @@
---- gcc-7.4.0/gcc/ubsan.c
-+++ gcc-7.4.0/gcc/ubsan.c
+--- gcc-8.3.0/gcc/ubsan.c
++++ gcc-8.3.0/gcc/ubsan.c
 @@ -1471,7 +1471,7 @@ ubsan_use_new_style_p (location_t loc)
 
    expanded_location xloc = expand_location (loc);
