@@ -72,11 +72,12 @@ cd gcc-build
     --enable-multilib \
     --enable-multiarch \
     --prefix=/c/Users/Public/bionic \
+    --with-gcc-major-version-only \
     --with-sysroot=/c/Users/Public/bionic/sys-root \
     --disable-libmudflap \
     --with-build-sysroot=/usr/local/bionic-toolchain/sys-root \
     --libdir=/c/Users/Public/bionic/sys-root/usr/lib \
-    --with-gxx-include-dir=/c/Users/Public/bionic/sys-root/usr/include/c++/8.3.0 \
+    --with-gxx-include-dir=/c/Users/Public/bionic/sys-root/usr/include/c++/8 \
     || exit $?
 make -j3 all-gcc || exit $?
 DESTDIR=$PWD/../gcc-install make install-gcc || exit $?
