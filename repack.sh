@@ -44,14 +44,6 @@ rm -rf repack/out/etc
 # remove all empty dirs (semi-recursive)
 rm -d repack/out/*(/^F)
 
-# move "6" to "8.3.0" directories
-#rm repack/out/usr/lib/gcc/aarch64-linux-gnu/8.3.0
-mv repack/out/usr/lib/gcc/aarch64-linux-gnu/8 repack/out/usr/lib/gcc/aarch64-linux-gnu/8.3.0
-rm repack/out/usr/include/aarch64-linux-gnu/c++/8.3.0
-mv repack/out/usr/include/aarch64-linux-gnu/c++/8 repack/out/usr/include/aarch64-linux-gnu/c++/8.3.0
-rm repack/out/usr/include/c++/8.3.0
-mv repack/out/usr/include/c++/8 repack/out/usr/include/c++/8.3.0
-
 # change absolute symlinks into relative symlinks
 pushd repack/out/usr/lib/aarch64-linux-gnu
 rm libanl.so
@@ -90,7 +82,7 @@ ln -s ../../../lib/aarch64-linux-gnu/libthread_db.so.1 libthread_db.so
 ln -s ../../../lib/aarch64-linux-gnu/libutil.so.1 libutil.so
 popd
 
-pushd repack/out/usr/lib/gcc/aarch64-linux-gnu/8.3.0
+pushd repack/out/usr/lib/gcc/aarch64-linux-gnu/8
 rm libasan.so
 rm libatomic.so
 rm libgcc_s.so.1
@@ -106,7 +98,7 @@ ln -s ../../../aarch64-linux-gnu/libstdc++.so.6 libstdc++.so
 ln -s ../../../aarch64-linux-gnu/libubsan.so.0 libubsan.so
 popd
 
-cp patches/libgcc_s.so repack/out/usr/lib/gcc/aarch64-linux-gnu/8.3.0/libgcc_s.so
+cp patches/libgcc_s.so repack/out/usr/lib/gcc/aarch64-linux-gnu/8/libgcc_s.so
 
 
 pushd repack/out/usr/lib/aarch64-linux-gnu
