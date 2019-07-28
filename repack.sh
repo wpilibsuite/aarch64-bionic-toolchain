@@ -98,7 +98,7 @@ ln -s ../../../aarch64-linux-gnu/libstdc++.so.6 libstdc++.so
 ln -s ../../../aarch64-linux-gnu/libubsan.so.0 libubsan.so
 popd
 
-cp patches/libgcc_s.so repack/out/usr/lib/gcc/aarch64-linux-gnu/8.3.0/libgcc_s.so
+cp patches/libgcc_s.so repack/out/usr/lib/gcc/aarch64-linux-gnu/8/libgcc_s.so
 
 
 pushd repack/out/usr/lib/aarch64-linux-gnu
